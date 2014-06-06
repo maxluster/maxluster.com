@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title =page_title
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="description" content=page_description
+    meta name="viewport" content="width=device-width, minimum-scale=1.0, maximim-scale=1.0"
+
+    // Primary fonts
+    == javascript_include_tag "//use.typekit.net/ctu1uzz.js"
+    javascript:
+      try{Typekit.load();}catch(e){}
+    == stylesheet_link_tag "//cloud.typography.com/6507252/707822/css/fonts.css"
+    // Small Caps
+    == stylesheet_link_tag "//cloud.typography.com/6507252/727822/css/fonts.css"
+    // Compiled app SASS
+    == stylesheet_link_tag "app"
+  body
+    main#main role="main"
+      == partial "/layouts/_header"
+      == yield
+      == partial "/layouts/_footer"
+
+    //Load JQ after page content
+    == javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    javascript:
+      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.9.1.min.js"><\/script>')
+
+    //Load JQ Color
+    / == javascript_include_tag "http://code.jquery.com/color/jquery.color.plus-names-2.1.0.min.js"
+
+    //Load site JS
+    == javascript_include_tag "app"
+
+    //Google Analytics
+    javascript:
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+
+    //Small caps fonts
+    == javascript_include_tag "//use.typekit.net/ajg6pts.js"
+    javascript:
+      try{Typekit.load();}catch(e){}

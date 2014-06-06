@@ -1,0 +1,18 @@
+{
+  "folders":
+  [
+    {
+      "file_exclude_patterns":
+      [
+        "*.scssc"
+      ],
+      "folder_exclude_patterns":
+      [
+        ".sass-cache",
+        "doc"
+      ],
+      "follow_symlinks": true,
+      "path": "/Users/maxluster/Projects/maxluster.com"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+/*  -----------------------------------------------------------------------------
+	::  MODULE - ARTICLE
+	::
+	::	Set styles for component ARTICLE
+	----------------------------------------------------------------------------- */
+
+
+@mixin counter-weight{
+	top: 0;
+	width: 0;
+	border-left: .5rem solid calcShade(10);
+	height: 100%;
+	@content;
+}
+
+
+
+#article{
+	//CONSTANTS
+	$border-width: .125rem;
+
+  @include headers{
+  	clear:both;
+  }
+
+	#article-title{
+		padding-top: 4rem;
+		> *{
+			@include articleGrid;
+		}
+		h1{
+			font-weight: 600;
+			margin-top: 0;
+			margin-bottom: 1.5rem;
+			color: black;
+			
+			@include breakpoint("s"){
+				// margin-top: 4rem;
+				@include before{
+					@include counter-weight{
+						left: 0;
+					}
+				}
+			}
+		}
+		h4{
+			margin-bottom: 2rem;
+			// font-style: italic;
+			line-height: 1.35;
+			margin-top: 0;
+		}
+		h6{
+			margin-top: 0rem;
+			line-height: 1;
+			margin-bottom: 1.5rem;
+			color: calcShade(30);
+			font-weight: 300;
+			// text-transform: uppercase;
+			font-size: $ms--1;
+			font-style: italic;
+			font-family: $serif;
+		}
+	}
+
+	#article-body{
+		margin-bottom: 1rem;
+	  @include type{
+	  	@include articleGrid;
+	  }
+	  blockquote, ol, ul{
+	  	@include articleGrid;
+	  }
+	  aside, figcaption{
+	  	// font-family: $sans-serif;
+	  	$style: solid;
+	  	$color: calcShade(8);
+	  	//This could be abstracted and improved for reuse
+	  	@mixin asideBorder($width){
+	  		top: .4rem; // Adjusted to line up with cap height
+	  		height: 0;
+	  		width: $width;
+	  		border-top: $border-width $style calcShade(8);
+	  	}
+
+	  	position: relative;
+	  	width: 70%;
+	  	margin: 1.25rem auto;
+
+	  	font-style: italic;
+	  	color: calcShade(65);
+	  	padding: 1rem 0;
+	  	line-height: 1.8;
+	  	text-align: center;
+
+	  	img{
+	  		margin: .5rem 0 .25rem;
+	  	}
+	  	@include before{
+	  		@include asideBorder(33.33333%);
+	  		right: 33.333333%;
+	  	}
+	  	@include after{
+	  		@include asideBorder(33.33333%);
+	  		right: 33.333333%;
+	  		top: auto;
+	  		bottom: .35rem;
+	  	}
+
+	  	&.important{
+	  		border-top: $border-width $style $red;
+	  	}
+
+	  	@include breakpoint(520px){
+	  		width: 20%;
+	  		margin-top: 0;
+	  		margin-right: 5%;
+	  		text-align: right;
+	  		float: left;
+	  		clear: left;
+	  		&:before, &:after{
+	  			width: 50%;
+					right: 0;
+	  		}
+	  	}
+	  	@include breakpoint("s"){
+	  		&:before, &:after{
+					width: 25%;
+	  		}
+	  	}
+	  	@include breakpoint("xl"){
+	  		&:after{
+	  			display: none;
+	  		}
+	  	}
+	  }
+
+		//Match to small grid, remove once grid is constrained
+		aside{
+			@include responsive('margin-left'
+				,6.709% 520px
+				,8.757% 670px
+				,11.744% 730px
+				,0 "xs"
+			);
+		}
+
+
+	  .video{
+			margin: 1.5rem 0;
+	  }
+	  img{
+	    +aside{
+	    	margin-top: 1rem;
+	    }
+	  }
+
+	  blockquote{
+	  	display: block;
+	  	margin: 1.5rem 0;
+	  	em{
+	  		display: block;
+	  		padding-top: .25rem;
+	  	}
+	  	p{
+		  	padding: 0 1rem;
+		  	margin: 0;
+		  	@include breakpoint("m"){
+		  		padding: 0 2rem;
+		  	}
+		  	// @include breakpoint("xl"){
+		  	//   padding-right: 25%;
+		  	// }
+	  	}
+	  }
+
+	  figure{
+	  	@include smallGrid;
+	  	figcaption{
+	  		margin-top: 1.6rem; 
+	  	}
+	    img{
+	    	width: 100%;
+	    	@include breakpoint(520px){
+	    		width: 75%;
+	    	}
+	    	&.narrow{
+					padding: 0 15%;
+					@include breakpoint(520px){
+						padding: 0 25% 0 0;
+					}
+	    	}
+	    }
+	    //Counterweight
+	   	@include breakpoint("xs"){
+				// margin-top: 4rem;
+				@include before{
+					@include counter-weight{
+						top: 2rem;
+						right: 0;
+						height: 6rem;
+					}
+				}
+			}
+	  }
+	}
+
+	#article-comments{
+		background: calcShade(3);
+		margin: 3rem 0;
+		@include smallGrid;
+		padding-top: 1.5rem;
+		padding-bottom: 1rem;
+		@include breakpoint("xs"){
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+	}
+
+	#article-nav{
+		@include smallGrid;
+		@include breakpoint("xs"){
+		  padding-left: 0;
+		  padding-right: 0;
+		}
+		margin: 3rem 0;
+
+		ul{
+			@include clearfix;
+			li{
+				// height: 100%;
+				width: 100%;
+				margin-bottom: 2rem;
+				&:last-child{
+					margin-bottom: 0rem;
+				}
+				
+				a{
+					h6, h3{
+						margin: 0;
+						@include transition-property("color");
+						@include transition-duration(".3s");
+					}
+					h6{
+						line-height: 1;
+						color: calcShade(30);
+						text-transform: lowercase;
+						font-size: $ms--1;
+						margin-bottom: .75rem;
+						font-family: $serif;
+						font-style: italic;
+					}
+					h3{
+						line-height: 1.25;
+						// color: calcShade(80);
+					}
+					&:hover{
+						h6{
+							color: calcShade(40);
+						}
+						h3{
+							color: calcShade(100);
+						}
+					}
+				}
+			}
+			@include breakpoint("s"){
+				.previous{
+					float: right;
+					text-align: right;
+				}
+				.next{
+					float: left;
+				}
+				li{
+					width: calc(50% - 2rem);
+					&:first-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

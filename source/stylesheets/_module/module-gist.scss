@@ -1,0 +1,62 @@
+/*  -----------------------------------------------------------------------------
+	::  MODULE - GIST
+	::
+	::	Set styles for component GIST
+	----------------------------------------------------------------------------- */
+.gist{
+	margin: 1.5rem 0;
+	*{
+		border: none !important;
+		font-size: .8rem;
+		font-family: Consolas,"Liberation Mono",Courier,monospace !important; 
+	}
+
+
+	.file-data, .line-data, .line-data *{
+		background: rgba(255,255,255, .95);
+	}
+
+	.gist-meta, .line-numbers{
+		// background: $very-light-grey !important;
+	}
+
+	.gist-file{
+		.gist-data .file-data{
+			.line-numbers{
+				background: none !important;
+				padding: 0 .5rem 0 0 !important;
+				width: 2rem !important;
+				span{
+					background: none !important;
+				}
+			}
+			.line-data{
+				padding: .5rem !important;
+			}
+		}
+		.gist-meta{
+			background: none !important;
+			font-size: 1rem/$font-ratio !important;
+			padding: .5rem 0 .5rem 2rem !important;
+			a{
+				color: $red !important;
+				&:hover{
+					color: $dark-red !important;
+				}
+				&:visited{
+					color: $dark-red !important; 
+				}
+				&:nth-child(2){
+					color: $medium-grey !important;
+					margin-right: 1rem !important;
+					&:hover{
+						color: $dark-grey !important;
+					}
+					&:visited{
+						color: $dark-grey !important; 
+					}
+				}
+			}
+		}
+	}	
+}

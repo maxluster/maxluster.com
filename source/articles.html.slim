@@ -1,0 +1,25 @@
+---
+pageable: true
+per_page: 20
+title: Articles on Design & Development
+---
+
+section#ArticlesList
+  ul
+    - page_articles.each_with_index do |article, i|
+      li
+        div.dateLength
+          h6 == article.data.date.strftime("%B #{article.date.time.day.ordinalize}, %Y")
+          h6 == "#{article.data.readLenMins} min read"
+        div.titleSubhead
+          h2 == link_to article.title, "#{article.url}#article"
+          h5 == article.data.subhead
+          h6 == link_to "Read more &raquo;", "#{article.url}#article"
+
+- if prev_page || next_page
+  #pagination
+    span Page #{page_number} of #{num_pages}
+    - if prev_page
+      == link_to 'Previous page', prev_page 
+    - if next_page
+      == link_to 'Previous page', next_page

@@ -1,0 +1,31 @@
+/*  -----------------------------------------------------------------------------
+	::  LAYOUT - MAIN
+	::
+	::	Set layout rules for the main site template
+	----------------------------------------------------------------------------- */
+
+//Grid settings
+// 3.789% 310px
+$grid-breakpoint-lists: 
+  11.744% 780px
+  ,14.639% 940px
+  ,19.098% 1180px
+  ,21.132% 1350px
+  ,25% 1760px;
+
+
+#main{
+  overflow: hidden;
+}
+
+#header, #footer, #ArticlesList{
+  @include globalGrid;
+}
+
+#article{
+  @include largeGrid;
+}
+
+.constrained{
+  @include articleGrid;
+}

@@ -1,0 +1,102 @@
+/*  -----------------------------------------------------------------------------
+	::  MODULE - HEADER
+	::
+	::	Set styles for component HEADER
+	----------------------------------------------------------------------------- */
+
+
+$grid-breakpoint-lists: 
+  11.744% 780px
+  ,14.639% 940px
+  ,19.098% 1140px
+  ,21.132% 1350px
+  ,25% 1600px;
+
+
+#header{
+  // CONSTANTS
+	$border-width: .15rem;
+  $nav-font-size: $ms-1;
+  $nav-line-height: 3rem;
+  $nav-top: 1.5rem;
+  $nav-height: $nav-line-height + $nav-top;
+  
+  $header-background: $teal;
+
+  background: $header-background;
+
+  a{
+    font-family: $sans-serif;
+    color: calcTint(80);
+    &:hover{
+      color: white;
+    }
+  }
+
+	nav{
+    width: 100%;
+    height: $nav-height;
+    margin-bottom: $nav-top;
+    position: relative;
+
+    .nameIcon{
+      position: absolute;
+      z-index: 1;
+      top: $nav-top;
+      left: 0;
+      border-radius: 50%;
+      width: $nav-line-height;
+      line-height: $nav-line-height;
+
+      color: $header-background;
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'Gotham Rounded A', 'Gotham Rounded B', helvetica, arial;
+      font-weight: 500;
+      background: calcShade(45);
+      @include transition-property("background");
+      @include transition-duration(".3s");
+      &:hover{
+        background: calcShade(62);
+        cursor: pointer;
+      }
+    }
+    ul{
+      font-weight: 300;
+      position: absolute;
+      top: $nav-top;
+      width: 100%;
+      text-align: right;
+      font-size: $nav-font-size;
+      li{
+        margin: 0 3%;
+        line-height: $nav-line-height;
+        @include breakpoint("xxs"){
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+        a{
+          color: calcTint(68);
+          @include transition-property("color");
+          @include transition-duration(".3s");
+          &:hover{
+            color: calcTint(98);
+          }
+          &.active{
+            color: calcTint(98);
+          }
+        }
+      }
+    }
+	}
+  h3{
+    color: calcTint(98);
+    margin: 0;
+    padding: 2rem 0 2.5rem;
+    text-align: left;
+    font-weight: 500;
+    border-top: .25rem solid calcShade(5);
+    line-height: 1.45;
+  }
+}

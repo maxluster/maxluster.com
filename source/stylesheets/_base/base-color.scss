@@ -1,0 +1,53 @@
+/*  -----------------------------------------------------------------------------
+	::  BASE COLOR
+	::
+	::	Set global constants for COLOR
+	----------------------------------------------------------------------------- */
+
+// $red: hsl(3, 67.8571%, 32.9412%);
+// $orange: hsl(9, 58.3333%, 52.9412%);
+// $teal: hsl(180, 73.2673%, 39.6078%);
+// $blue: hsl(221, 34.6341%, 40.1961%);
+// $purple: hsl(290, 16.6667%, 35.2941%);
+// $tan: hsl(34, 61.2903%, 75.6863%);
+
+
+$red: hsl(358, 69%, 46%);
+$orange: hsl(8, 73%, 46%);;
+$blue: hsl(200, 95%, 36%);
+$teal: hsl(180, 90%, 33%);
+$purple: hsl(293, 46%, 31%);
+
+$tan: hsl(26, 18%, 75%);
+
+
+$dark-multiplier: 20%;
+$dark-red: shade($red, $dark-multiplier);
+$dark-orange: shade($orange, $dark-multiplier);
+$dark-blue: shade($blue, $dark-multiplier);
+$dark-teal: shade($teal, $dark-multiplier);
+$dark-purple: shade($purple, $dark-multiplier);
+
+$very-light-grey: rgba(0,0,0,.1);
+$light-grey: rgba(0,0,0,.2);
+$medium-grey: rgba(0,0,0,.5);
+$dark-grey: rgba(0,0,0,.7);
+$very-dark-grey: rgba(0,0,0,.9);
+
+// $background: hsla(24, 2%, 98%, 1.0000);	//SALMON
+$background: hsla(220, 15%, 97%, 1.0000); // Cool white
+
+$grey: rgba(150, 150, 150, 1);
+
+
+
+
+// Standard Content Colors
+$font-color: calcShade(74);
+// $font-color: hsl(200, 3%, 35%);
+
+
+$header-color: $font-color;
+// $header-color: calcShade(55);
+// $header-color: calcShade(85);
+$link-color: $red;

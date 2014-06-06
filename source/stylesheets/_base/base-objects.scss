@@ -1,0 +1,92 @@
+/*  -----------------------------------------------------------------------------
+	::  BASE OBJECTS
+	::
+	::	Set global defaults for core HTML objects
+	----------------------------------------------------------------------------- */
+
+html{
+  //This doesn't work on phones, but it does on my desktop. WHY!?
+  @media only screen and (min-device-width : 320px) and (max-device-width : 1024px){
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+
+#main{
+  background: $background;
+}
+
+#wrapper{
+	border-top: 1px solid #fff;
+}
+
+.panel{
+	padding: .5rem;
+	background-color: #f5f5f5;
+}
+
+ol, ul{
+  padding: 0;
+  li{
+    margin: .25rem 0 .25rem 1.5rem;
+  }
+}
+
+abbr{
+  letter-spacing: 1px;
+  // font-size: .96em;
+}
+
+nav{
+  ul{
+    margin: 0;
+    li{
+      margin: 0;
+      display: inline-block;
+    }
+  }
+}
+
+em{
+  &.leadIn{
+    font-style: normal;
+    font-family: $small-caps;
+    letter-spacing: 1px;
+  }
+}
+
+img{
+  line-height: 1;
+  margin: 1rem 0 0;
+  width: 100%;
+  &.bordered{
+    border: .1rem solid calcShade(5);
+  }
+}
+
+.panel{
+  line-height: 1;
+  padding: 1.5rem 5%;
+  margin: 1rem 0;
+  border-radius: .3rem;
+  $panel-bg-alpha: .15;
+  img{
+    margin: 0;
+  }
+  &.red{
+    background: rgba($red, $panel-bg-alpha);
+  }
+  &.teal{
+    background: rgba($teal, $panel-bg-alpha);
+  }
+  &.blue{
+    background: rgba($blue, $panel-bg-alpha);
+  }
+  &.orange{
+    background: rgba($orange, $panel-bg-alpha);
+  } 
+  &.purple{
+    background: rgba($purple, $panel-bg-alpha);
+  }    
+}

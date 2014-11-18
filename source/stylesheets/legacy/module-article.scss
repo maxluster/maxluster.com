@@ -33,7 +33,7 @@
 			margin-top: 0;
 			margin-bottom: 1.5rem;
 			color: black;
-			
+
 			@include breakpoint("s"){
 				// margin-top: 4rem;
 				@include before{
@@ -136,12 +136,12 @@
 
 		//Match to small grid, remove once grid is constrained
 		aside{
-			@include responsive('margin-left'
-				,6.709% 520px
-				,8.757% 670px
-				,11.744% 730px
-				,0 "xs"
-			);
+			@include responsive('margin-left', 0, (
+				520px : 6.709%,
+				670px : 8.757%,
+				730px : 11.744%,
+				"xs": 0
+			));
 		}
 
 
@@ -176,7 +176,7 @@
 	  figure{
 	  	@include smallGrid;
 	  	figcaption{
-	  		margin-top: 1.6rem; 
+	  		margin-top: 1.6rem;
 	  	}
 	    img{
 	    	width: 100%;
@@ -233,7 +233,7 @@
 				&:last-child{
 					margin-bottom: 0rem;
 				}
-				
+
 				a{
 					h6, h3{
 						margin: 0;

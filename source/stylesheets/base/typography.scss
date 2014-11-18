@@ -5,8 +5,8 @@
 	----------------------------------------------------------------------------- */
 
 //Constants
-$base-size: 1rem;
-$font-ratio: 1.25;
+$base-size: 1rem, 1.2rem;
+$font-ratio: $golden;
 $sans-serif: 'Whitney A', 'Whitney B', "lucida sans", "gill sans", helvetica, arial, sans-serif;
 $serif: "ff-tisa-web-pro", georgia, serif;
 $small-caps: "ff-meta-serif-sc-web-pro";
@@ -22,32 +22,30 @@ $ms--1: ms(-1, $base-size, $font-ratio);
 
 //Global styles NEEDS REFACTOR
 html{
-	//Mobile first defaults
+	// Mobile first defaults
 	// font-family: $sans-serif;
 	font-family: $serif;
 	font-weight: normal;
 	font-style: normal;
 	color: $font-color;
-	
-	font-size: 13px;
-	@include responsive("font-size"
-		,14px 350px
-		,15px 520px
-		,16px 580px
-		,17px 630px
-		,18px 780px
-		,19px 840px
-		,20px 1030px
-		,21px 1450px
-		,22px 2200px
-		,23px 2450px
-	);
 
-	line-height: 1.55;
-	@include responsive("line-height"
-		,1.60 1400px
-		,1.65 2200px
-	);
+	@include responsive("font-size", 13px, (
+		350px  : 14px,
+		520px  : 15px,
+		580px  : 16px,
+		630px  : 17px,
+		780px  : 18px,
+		840px  : 19px,
+		1030px : 20px,
+		1450px : 21px,
+		2200px : 22px,
+		2450px : 23px
+	));
+
+	@include responsive("line-height", 1.55, (
+		1400px : 1.60,
+		2200px : 1.65
+	));
 }
 
 // Use old style when available

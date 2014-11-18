@@ -1,13 +1,18 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
-gem "middleman", "~> 3.3.3"
-gem "middleman-blog", "~> 3.5.3"
-gem 'compass', '~> 1.0.0.alpha.19'
+gem "middleman"
+gem "middleman-blog"
+gem 'compass'
 gem "slim"
 gem "susy"
 gem "modular-scale"
 
+# Rails assets in sprockets
+gem "rails-assets-normalize-scss"
+gem "rails-assets-sassy-maps"
+gem "rails-assets-suit-utils"
+gem "rails-assets-breakpoint-sass"
+
 # For feed.xml.builder
-gem "builder", "~> 3.0"
+gem "builder"

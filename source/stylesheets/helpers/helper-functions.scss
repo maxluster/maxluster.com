@@ -4,17 +4,6 @@
 	::	Define global helper functions
 	----------------------------------------------------------------------------- */
 
-@function multiply-grid-pad($padding, $factor){
-  @return $padding - ($padding * $factor);
-}
-
-@function generate-url($img){
-  @return url("#{$imageRoot}#{$img}");
-}
-
-/*  -----------------------------------------------------------------------------
-  ::  COLOR
-  ----------------------------------------------------------------------------- */
 
 @function calcTint($percentage){
   $alpha: $percentage / 100;

@@ -16,16 +16,17 @@
 
 
 // Breakpoint list for primary content styling
-$named-breakpoints:
-  "xxxs"  480px,
-  "xxs"   620px,
-  "xs"    780px,
-  "s"     860px,
-  "m"     1100px,
-  "l"     1300px,
-  "xl"    1500px,
-  "xxl"   1700px,
-  "xxxl"  2200px;
+$named-breakpoints: (
+  "xxxs"  : 480px,
+  "xxs"   : 620px,
+  "xs"    : 780px,
+  "s"     : 860px,
+  "m"     : 1100px,
+  "l"     : 1300px,
+  "xl"    : 1500px,
+  "xxl"   : 1700px,
+  "xxxl"  : 2200px
+);
 
 @mixin smallGrid{
   padding-left: 3.789%;

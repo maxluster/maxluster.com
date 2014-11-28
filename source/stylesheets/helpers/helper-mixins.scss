@@ -92,3 +92,12 @@
   -o-font-feature-settings: "onum", "pnum";
   font-feature-settings: "onum", "pnum";
 }
+
+
+@mixin baseline($property, $divisions, $baselineDefault: $baselineDefault, $baselines: $baselines) {
+  // Recalculate baselines. Pull this into a memoized function
+  @each $breakpoint, $baseline in $baselines {
+    $baselines: map-merge($baselines, ($breakpoint: $divisions * $baseline / $baselineDivisions));
+  }
+  @include responsive(#{$property}, $baselineDefault, $baselines);
+}

@@ -56,7 +56,7 @@
 			color: calcShade(30);
 			font-weight: 300;
 			// text-transform: uppercase;
-			font-size: $ms--1;
+			font-size: ms(0);
 			font-style: italic;
 			font-family: $serif;
 		}
@@ -244,14 +244,13 @@
 						line-height: 1;
 						color: calcShade(30);
 						text-transform: lowercase;
-						font-size: $ms--1;
+						font-size: ms(0);
 						margin-bottom: .75rem;
 						font-family: $serif;
 						font-style: italic;
 					}
 					h3{
 						line-height: 1.25;
-						// color: calcShade(80);
 					}
 					&:hover{
 						h6{

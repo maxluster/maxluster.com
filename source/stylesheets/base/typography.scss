@@ -1,136 +1,42 @@
-/*  -----------------------------------------------------------------------------
-	::  BASE TYPE
-	::
-	::	Set global typography rules
-	----------------------------------------------------------------------------- */
 
-//Constants
-$base-size: 1rem, 1.2rem;
-$font-ratio: $golden;
+/* Font stacks
+============================================================================ */
+
 $sans-serif: 'Whitney A', 'Whitney B', "lucida sans", "gill sans", helvetica, arial, sans-serif;
 $serif: "ff-tisa-web-pro", georgia, serif;
 $small-caps: "ff-meta-serif-sc-web-pro";
 
-//Calculated Constants
-$ms-5: ms(5, $base-size, $font-ratio);
-$ms-4: ms(4, $base-size, $font-ratio);
-$ms-3: ms(3, $base-size, $font-ratio);
-$ms-2: ms(2, $base-size, $font-ratio);
-$ms-1: ms(1, $base-size, $font-ratio);
-$ms-0: ms(0, $base-size, $font-ratio);
-$ms--1: ms(-1, $base-size, $font-ratio);
 
-//Global styles NEEDS REFACTOR
-html{
-	// Mobile first defaults
-	// font-family: $sans-serif;
-	font-family: $serif;
-	font-weight: normal;
-	font-style: normal;
-	color: $font-color;
+/* Modular Scales
+============================================================================= */
 
-	@include responsive("font-size", 13px, (
-		350px  : 14px,
-		520px  : 15px,
-		580px  : 16px,
-		630px  : 17px,
-		780px  : 18px,
-		840px  : 19px,
-		1030px : 20px,
-		1450px : 21px,
-		2200px : 22px,
-		2450px : 23px
-	));
+$ms-base: .8rem 1rem;
+$ms-ratio: $golden;
 
-	@include responsive("line-height", 1.55, (
-		1400px : 1.60,
-		2200px : 1.65
-	));
-}
 
-// Use old style when available
-*{
-	@include old-style-figures;
-}
+/* Baseline
+============================================================================= */
 
-//Reset type styles
-@include type{
-	margin: 1rem 0;
-	padding: 0;
-}
+$baselineDivisions: 8;
+$baselineDefault: 1.55rem;
+$baselines: (
+	1000px: 1.6rem,
+	1500px: 1.65rem
+);
 
-//Init Body Type
-p, td, th{
-	font-size: 1rem;
-}
 
-@include headers{
-	font-family: $sans-serif;
-	font-weight: 300;
-	color: $header-color;
-	line-height: 1.3;
-	margin: 2rem 0 1rem;
-	@include breakpoint(1300px){
-		line-height: 1.35;
-	}
-}
+/* Font weight scale
+============================================================================= */
 
-h1{
-	font-size: ms(5, $base-size, $font-ratio);
-}
-h2{
-	font-size: ms(4, $base-size, $font-ratio);
-}
-h3{
-	font-size: ms(3, $base-size, $font-ratio);
-}
-h4{
-	font-size: ms(2, $base-size, $font-ratio);
-	// margin: 1.5rem 0 1rem;
-	&+p{
-		margin-top: 0;
-	}
-}
-h5{
-	font-size: ms(1, $base-size, $font-ratio);
-}
-h6{
-	font-size: 1rem;
-}
-
-a{
-	text-decoration: none;
-	color: $link-color;
-	@include transition-property('color') ;
-	@include transition-duration(.2s);
-	&:hover{
-		color: $dark-red;
-	}
-}
-
-em{
-	font-style: italic;
-}
-
-blockquote{
-	font-style: italic;
-	em{
-		font-style: normal;
-		font-size: ms(-1, $base-size, $font-ratio);
-	}
-}
-
-aside, figcaption{
-	font-size: ms(-1, $base-size, $font-ratio);
-}
-
-@mixin small-caps{
-	font-style: normal;
-	font-family: $small-caps;
-	letter-spacing: 1px;
-	line-height: 1;
-}
-
-em.leadIn, abbr{
-	@include small-caps
+$fontWeights: (
+	-1 : 300,
+	0  : 400,
+	1  : 500,
+	2  : 600
+);
+@function fontWeight($i, $fontWeights: $fontWeights) {
+  @if map-get($fontWeights, $i) == null {
+    @error "No font weight defined for: " + $i;
+  }
+  @return map-get($fontWeights, $i);
 }

@@ -16,7 +16,7 @@ $grid-breakpoint-lists:
 #header{
   // CONSTANTS
 	$border-width: .15rem;
-  $nav-font-size: $ms-1;
+  $nav-font-size: ms(1);
   $nav-line-height: 3rem;
   $nav-top: 1.5rem;
   $nav-height: $nav-line-height + $nav-top;

@@ -8,7 +8,7 @@
 	*{
 		border: none !important;
 		font-size: .8rem;
-		font-family: Consolas,"Liberation Mono",Courier,monospace !important; 
+		font-family: Consolas,"Liberation Mono",Courier,monospace !important;
 	}
 
 
@@ -36,7 +36,6 @@
 		}
 		.gist-meta{
 			background: none !important;
-			font-size: 1rem/$font-ratio !important;
 			padding: .5rem 0 .5rem 2rem !important;
 			a{
 				color: $red !important;
@@ -44,7 +43,7 @@
 					color: $dark-red !important;
 				}
 				&:visited{
-					color: $dark-red !important; 
+					color: $dark-red !important;
 				}
 				&:nth-child(2){
 					color: $medium-grey !important;
@@ -53,10 +52,10 @@
 						color: $dark-grey !important;
 					}
 					&:visited{
-						color: $dark-grey !important; 
+						color: $dark-grey !important;
 					}
 				}
 			}
 		}
-	}	
+	}
 }

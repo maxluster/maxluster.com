@@ -42,9 +42,9 @@
         margin-bottom: .5rem;
         width: 100%;
         font-style: italic;
-        
+
         @include headers{
-          font-size: $ms--1;
+          font-size: ms(0);
           color: calcShade(40);
           display: inline;
         }

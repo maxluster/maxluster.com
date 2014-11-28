@@ -4,6 +4,125 @@
 	::	Set global defaults for core HTML objects
 	----------------------------------------------------------------------------- */
 
+
+//Global styles NEEDS REFACTOR
+html{
+  // Mobile first defaults
+  // font-family: $sans-serif;
+  font-family: $serif;
+  font-weight: normal;
+  font-style: normal;
+  color: $font-color;
+
+  @include responsive("font-size", 13px, (
+    350px  : 14px,
+    520px  : 15px,
+    580px  : 16px,
+    630px  : 17px,
+    780px  : 18px,
+    840px  : 19px,
+    1030px : 20px,
+    1450px : 21px,
+    2200px : 22px,
+    2450px : 23px
+  ));
+
+  @include responsive("line-height", 1.55, (
+    1400px : 1.60,
+    2200px : 1.65
+  ));
+}
+
+// Use old style when available
+*{
+  @include old-style-figures;
+}
+
+//Reset type styles
+@include type{
+  margin: 1rem 0;
+  padding: 0;
+}
+
+//Init Body Type
+p, td, th{
+  font-size: ms(1);
+}
+
+@include headers{
+  font-family: $sans-serif;
+  font-weight: 300;
+  color: $header-color;
+  line-height: 1.3;
+  margin: 2rem 0 1rem;
+  @include breakpoint(1300px){
+    line-height: 1.35;
+  }
+}
+
+h1{
+  font-size: ms(5);
+}
+h2{
+  font-size: ms(4);
+}
+h3{
+  font-size: ms(3);
+}
+h4{
+  font-size: ms(2);
+}
+h5{
+  font-size: ms(1);
+}
+h6{
+  font-size: ms(0);
+}
+
+a{
+  text-decoration: none;
+  color: $link-color;
+  @include transition-property('color') ;
+  @include transition-duration(.2s);
+  &:hover{
+    color: $dark-red;
+  }
+}
+
+em{
+  font-style: italic;
+}
+
+blockquote{
+  font-style: italic;
+  em{
+    font-style: normal;
+    font-size: ms(0);
+  }
+}
+
+aside, figcaption{
+  font-size: ms(0);
+}
+
+@mixin small-caps{
+  font-style: normal;
+  font-family: $small-caps;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+em.leadIn, abbr{
+  @include small-caps
+}
+
+// Example line height baseline'd
+p{
+  @include baseline("line-height", 8);
+}
+
+
+
 html{
   //This doesn't work on phones, but it does on my desktop. WHY!?
   @media only screen and (min-device-width : 320px) and (max-device-width : 1024px){
@@ -85,8 +204,8 @@ img{
   }
   &.orange{
     background: rgba($orange, $panel-bg-alpha);
-  } 
+  }
   &.purple{
     background: rgba($purple, $panel-bg-alpha);
-  }    
+  }
 }

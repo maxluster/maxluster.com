@@ -17,6 +17,5 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-styled-components',
   ],
 }

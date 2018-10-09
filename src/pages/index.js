@@ -1,27 +1,42 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
-import Layout from '../components/layout'
+import Layout from '../components/layout.js'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  margin: 3rem auto;
-  background: black;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
+const Header = styled.header``
+
+const Content = styled.div``
+
+const TextContainer = styled.div``
+
+const Headline = styled.div``
+
+const Subhead = styled.div``
+
+const SubheadLink = styled.a``
+
+const ImageContainer = styled.a``
+
+const ImageContainerImg = styled.a``
 
 const IndexPage = () => (
   <Layout>
-    <Container>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <Link to="/page-2/">Go to page 2</Link>
-    </Container>
+    <Header>
+      <Content>
+        <TextContainer>
+          <Headline>
+            Max Luster is a San Francisco based product designer focused on
+            solving problems for technical audience
+          </Headline>
+          <Subhead>
+            Currently exploring new opportunities
+            <SubheadLink href="#">Get in touch</SubheadLink>.
+          </Subhead>
+        </TextContainer>
+        <ImageContainer>
+          <ImageContainerImg src="photo.jpg" />
+        </ImageContainer>
+      </Content>
+    </Header>
   </Layout>
 )
 

@@ -1,12 +1,12 @@
 import modularScale from 'modularscale-js'
 
 const config = {
-  base: [14],
+  base: [1],
   ratio: 1.618,
 }
 
-const ms = value => {
+const fontSize = value => {
   return modularScale(value, config)
 }
 
-export default ms
+export default fontSize

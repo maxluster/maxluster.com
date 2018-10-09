@@ -6,20 +6,20 @@ import palette from '../styles/palette.js'
 
 const Container = styled.footer`
   background: ${palette.darkGrey};
-  padding: 8rem 0;
+  padding: ${fontSize(3)}rem 0;
 `
 
 const Content = styled.div`
-  width: 87.5%;
+  width: 85%;
   display: flex;
   margin: 0 auto;
 `
 
 const FooterListHeader = styled.h3`
-  font-size: ${fontSize(1)}rem;
+  font-size: 1rem;
   color: white;
   font-weight: 500;
-  margin: 0 0 1rem;
+  margin: 0 0 0.6rem;
   font-feature-settings: 'smcp', 'c2sc';
   letter-spacing: 0.05rem;
 `
@@ -30,10 +30,10 @@ const FooterListItem = styled.li``
 
 const FooterAnchor = styled.a`
   color: ${palette.lightBlueGrey};
-  font-size: ${fontSize(1)}rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 2.4rem;
-  padding: 0.8rem 0;
+  line-height: 1.4rem;
+  padding: 0.6rem 0;
   display: block;
   transition: color 0.1s;
   &:hover {
@@ -51,16 +51,16 @@ const FooterColumn1 = styled(FooterColumn)`
 
 const FooterColumn2 = styled(FooterColumn)`
   width: 20%;
-  padding-right: 2rem;
+  padding-right: 1rem;
 `
 
 const FooterColumn3 = styled(FooterColumn)`
   width: 50%;
-  padding-right: 2rem;
+  padding-right: 1rem;
 `
 
 const AdditionalFooterList = styled.div`
-  margin-top: ${space(10)}rem;
+  margin-top: 2.2rem;
 `
 
 const FooterLink = ({ href, children }) => (

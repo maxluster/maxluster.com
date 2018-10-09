@@ -7,11 +7,11 @@ import palette from '../styles/palette.js'
 
 const Container = styled.header`
   background: white;
-  padding: 8rem 0;
+  padding: ${fontSize(3)}rem 0;
 `
 
 const Content = styled.div`
-  width: 87.5%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -23,18 +23,18 @@ const TextContainer = styled.div`
 `
 
 const Headline = styled.div`
-  font-size: ${fontSize(2)}rem;
+  font-size: ${fontSize(1)}rem;
   font-weight: 800;
-  margin-bottom: ${space(9)}rem;
+  margin-bottom: 1.618rem;
   color: ${palette.grey};
-  line-height: 3.8rem;
+  line-height: 2.5rem;
 `
 
 const Subhead = styled.div`
-  font-size: ${fontSize(2)}rem;
+  font-size: ${fontSize(1)}rem;
   font-weight: 400;
   color: ${palette.grey};
-  line-height: 3.8rem;
+  line-height: 2.5rem;
 `
 
 const SubheadLink = styled.a`

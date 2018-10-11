@@ -4,32 +4,7 @@ import space from '../styles/space.js'
 import fontSize from '../styles/font_size.js'
 import palette from '../styles/palette.js'
 
-const Header = styled.h3`
-  font-size: 1rem;
-  color: ${palette.mediumBlueGrey};
-  font-weight: 800;
-  -webkit-font-smoothing: antialiased;
-  margin: 0 0 0.6rem;
-  font-feature-settings: 'smcp', 'c2sc';
-  letter-spacing: 0.05rem;
-`
-
-const List = styled.ul``
-
-const ListItem = styled.li``
-
-const FooterAnchor = styled.a`
-  color: ${palette.lightBlueGrey};
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.4rem;
-  padding: 0.6rem 0;
-  display: inline-block;
-  transition: color 0.1s;
-  &:hover {
-    color: ${palette.yellow};
-  }
-`
+// Layout
 
 const Container = styled.footer`
   background: ${palette.darkGrey};
@@ -82,9 +57,37 @@ const Column2 = styled(Column)``
 const Column3 = styled(Column)`
   grid-column: 3;
 `
-
 const Section = styled.div`
   margin: 2rem 0;
+`
+
+// Styles
+
+const Header = styled.h3`
+  font-size: 1rem;
+  color: ${palette.mediumBlueGrey};
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 0 0.6rem;
+  font-feature-settings: 'smcp', 'c2sc';
+  letter-spacing: 0.05rem;
+`
+
+const List = styled.ul``
+
+const ListItem = styled.li``
+
+const FooterAnchor = styled.a`
+  color: ${palette.lightBlueGrey};
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  padding: 0.6rem 0;
+  display: inline-block;
+  transition: color 0.1s;
+  &:hover {
+    color: ${palette.yellow};
+  }
 `
 
 const Link = ({ href, children }) => (

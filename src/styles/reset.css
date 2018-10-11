@@ -4,7 +4,7 @@
 
 html {
   font-size: 15px;
-  font-family: 'Mark OT';
+  font-family: 'Mark', Arial;
 }
 
 @media (min-width: 1250px) {

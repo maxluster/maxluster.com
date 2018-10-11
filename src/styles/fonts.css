@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Mark';
+  font-weight: 800;
+  src: url('fonts/5423411/8706c0b6-b423-44f7-ae1a-dd0aabd8a542.eot?#iefix');
+  src: url('fonts/5423411/8706c0b6-b423-44f7-ae1a-dd0aabd8a542.eot?#iefix')
+      format('eot'),
+    url('fonts/5423411/41c8162d-c2a6-49b0-8139-8bebab187588.woff2')
+      format('woff2'),
+    url('fonts/5423411/4fe94f2e-7892-4785-9663-0350a7adf8c0.woff')
+      format('woff'),
+    url('fonts/5423411/3a7daddb-0a78-4734-a699-6fe08d0e8b99.ttf')
+      format('truetype');
+}
+@font-face {
+  font-family: 'Mark';
+  font-weight: 400;
+  src: url('fonts/5423476/85892bf5-3ec3-4b41-962d-b9c2d3dab2ad.eot?#iefix');
+  src: url('fonts/5423476/85892bf5-3ec3-4b41-962d-b9c2d3dab2ad.eot?#iefix')
+      format('eot'),
+    url('fonts/5423476/3b985398-c848-456f-8878-6a5c2a72b82a.woff2')
+      format('woff2'),
+    url('fonts/5423476/260903aa-66f6-4578-8f4e-aed460e46563.woff')
+      format('woff'),
+    url('fonts/5423476/aee5511e-bc73-45e1-9963-0ff9e501ba59.ttf')
+      format('truetype');
+}

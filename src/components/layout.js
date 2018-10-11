@@ -2,9 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
+import palette from '../styles/palette.js'
 
 import 'normalize.css'
+import '../styles/fonts.css'
 import '../styles/reset.css'
+
+const LayoutInner = styled.div`
+  max-width: 1550px;
+  margin: 0 auto;
+`
+
+const LayoutOuter = styled.div`
+  background: ${palette.background};
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,7 +40,9 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        {children}
+        <LayoutOuter>
+          <LayoutInner>{children}</LayoutInner>
+        </LayoutOuter>
       </>
     )}
   />

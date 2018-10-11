@@ -64,12 +64,12 @@ const Section = styled.div`
 // Styles
 
 const Header = styled.h3`
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: ${palette.mediumBlueGrey};
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
   margin: 0 0 0.6rem;
-  font-feature-settings: 'smcp', 'c2sc';
   letter-spacing: 0.05rem;
 `
 
@@ -107,14 +107,14 @@ const Footer = () => (
             <Header>Currently</Header>
             <List>
               <Link href="https://getcruise.com">
-                Freelance Product Designer, Cruise Automation
+                Contract Product Designer, Cruise Automation
               </Link>
             </List>
           </Section>
           <Section>
             <Header>Previously</Header>
             <List>
-              <Link href="https://bugsnag.com">VP of Design, Bugsnag</Link>
+              <Link href="https://bugsnag.com">Head of Design, Bugsnag</Link>
             </List>
           </Section>
         </Column1>

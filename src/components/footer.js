@@ -50,7 +50,9 @@ const LeftColumns = styled.div`
   }
 `
 
-const Column1 = styled(Column)``
+const Column1 = styled(Column)`
+  padding-right: 3rem;
+`
 
 const Column2 = styled(Column)``
 

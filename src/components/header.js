@@ -104,7 +104,7 @@ const Header = () => (
         <Subhead>
           Currently exploring new opportunities.&nbsp;
           <SubheadLink href="mailto:max@maxluster.com">
-            Get&nbsp;in&nbsp;tuch&nbsp;→
+            Get&nbsp;in&nbsp;touch&nbsp;→
           </SubheadLink>
         </Subhead>
       </TextContainer>

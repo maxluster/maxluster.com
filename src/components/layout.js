@@ -34,8 +34,11 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content:
+                'Max Luster is a San Francisco based product designer focused on solving problems for technical audiences',
+            },
           ]}
         >
           <html lang="en" />

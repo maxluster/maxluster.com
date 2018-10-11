@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import space from '../styles/space.js'
-import fontSize from '../styles/font_size.js'
 import palette from '../styles/palette.js'
 
 // Layout

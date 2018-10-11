@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import photo from '../images/photo.jpg'
-import space from '../styles/space.js'
 import fontSize from '../styles/font_size.js'
 import palette from '../styles/palette.js'
 
@@ -104,7 +103,9 @@ const Header = () => (
         </Headline>
         <Subhead>
           Currently exploring new opportunities.&nbsp;
-          <SubheadLink href="#">Get in touch →</SubheadLink>
+          <SubheadLink href="mailto:max@maxluster.com">
+            Get&nbsp;in&nbsp;tuch&nbsp;→
+          </SubheadLink>
         </Subhead>
       </TextContainer>
       <ImageContainer>

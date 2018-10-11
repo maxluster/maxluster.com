@@ -7,19 +7,65 @@ import palette from '../styles/palette.js'
 
 const Container = styled.header`
   background: white;
-  padding: ${fontSize(3)}rem 0;
+  padding: 4rem 0;
 `
 
 const Content = styled.div`
-  width: 85%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 42fr 3fr;
+  justify-items: center;
+  @media (min-width: 500px) {
+    grid-template-columns: 4fr 40fr 4fr;
+  }
+  @media (min-width: 700px) {
+    margin: 2rem 0;
+    justify-items: auto;
+    grid-template-columns: 4fr 9fr 3fr 28fr 4fr;
+  }
+  @media (min-width: 1050px) {
+    margin: 0;
+    grid-template-columns: 2fr 20fr 2fr 22fr 2fr;
+  }
+  @media (min-width: 1150px) {
+    grid-template-columns: 3fr 18fr 3fr 21fr 3fr;
+  }
+  @media (min-width: 1400px) {
+    grid-template-columns: 4fr 18fr 2fr 20fr 4fr;
+  }
 `
 
 const TextContainer = styled.div`
-  width: 42.5%;
-  margin: auto 0;
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 33rem;
+  @media (min-width: 700px) {
+    grid-column: 4;
+    grid-row: auto;
+  }
+  @media (min-width: 1050px) {
+    grid-column: 2;
+    align-self: center;
+  }
+`
+
+const ImageContainer = styled.div`
+  grid-column: 2;
+  grid-row: 1;
+  @media (min-width: 1050px) {
+    grid-column: 4;
+  }
+`
+const Image = styled.img`
+  width: ${fontSize(5)}rem;
+  border-radius: 50%;
+  margin-bottom: ${2 * fontSize(1)}rem;
+  @media (min-width: 700px) {
+    width: 100%;
+    margin: 0;
+  }
+  @media (min-width: 1050px) {
+    border-radius: 4px;
+  }
 `
 
 const Headline = styled.div`
@@ -41,16 +87,11 @@ const SubheadLink = styled.a`
   font-size: inherit;
   text-decoration: none;
   color: ${palette.blue};
-`
-
-const ImageContainer = styled.div`
-  flex-shrink: 0;
-  width: 50%;
-`
-
-const ImageContainerImg = styled.img`
-  width: 100%;
-  border-radius: 4px;
+  transition: opacity 0.1s;
+  white-space: nowrap;
+  &:hover {
+    opacity: 0.6;
+  }
 `
 
 const Header = () => (
@@ -63,11 +104,11 @@ const Header = () => (
         </Headline>
         <Subhead>
           Currently exploring new opportunities.&nbsp;
-          <SubheadLink href="#">Get in touch</SubheadLink>.
+          <SubheadLink href="#">Get in touch →</SubheadLink>
         </Subhead>
       </TextContainer>
       <ImageContainer>
-        <ImageContainerImg src={photo} />
+        <Image src={photo} />
       </ImageContainer>
     </Content>
   </Container>

@@ -4,29 +4,19 @@ import space from '../styles/space.js'
 import fontSize from '../styles/font_size.js'
 import palette from '../styles/palette.js'
 
-const Container = styled.footer`
-  background: ${palette.darkGrey};
-  padding: ${fontSize(3)}rem 0;
-`
-
-const Content = styled.div`
-  width: 85%;
-  display: flex;
-  margin: 0 auto;
-`
-
-const FooterListHeader = styled.h3`
+const Header = styled.h3`
   font-size: 1rem;
-  color: white;
-  font-weight: 500;
+  color: ${palette.mediumBlueGrey};
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
   margin: 0 0 0.6rem;
   font-feature-settings: 'smcp', 'c2sc';
   letter-spacing: 0.05rem;
 `
 
-const FooterList = styled.ul``
+const List = styled.ul``
 
-const FooterListItem = styled.li``
+const ListItem = styled.li``
 
 const FooterAnchor = styled.a`
   color: ${palette.lightBlueGrey};
@@ -34,115 +24,151 @@ const FooterAnchor = styled.a`
   font-weight: 400;
   line-height: 1.4rem;
   padding: 0.6rem 0;
-  display: block;
+  display: inline-block;
   transition: color 0.1s;
   &:hover {
     color: ${palette.yellow};
   }
 `
 
-const FooterColumn = styled.div`
-  flex-shrink: 0;
+const Container = styled.footer`
+  background: ${palette.darkGrey};
+  padding: 2rem 0;
 `
 
-const FooterColumn1 = styled(FooterColumn)`
-  width: 30%;
+const Content = styled.div`
+  padding: 0 6.25%;
+  @media (min-width: 500px) {
+    padding: 0 8.333%;
+  }
+  @media (min-width: 800px) {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 3fr 18fr 24fr 3fr;
+  }
+  @media (min-width: 1050px) {
+    grid-template-columns: 2fr 22fr 22fr 2fr;
+  }
+  @media (min-width: 1150px) {
+    grid-template-columns: 3fr 21fr 21fr 3fr;
+  }
+  @media (min-width: 1400px) {
+    grid-template-columns: 4fr 20fr 20fr 4fr;
+  }
 `
 
-const FooterColumn2 = styled(FooterColumn)`
-  width: 20%;
-  padding-right: 1rem;
+const Column = styled.div`
+  padding-right: 2rem;
 `
 
-const FooterColumn3 = styled(FooterColumn)`
-  width: 50%;
-  padding-right: 1rem;
+const LeftColumns = styled.div`
+  grid-column: 2;
+  @media (min-width: 1050px) {
+    display: grid;
+    grid-template-columns: 14fr 8fr;
+  }
+  @media (min-width: 1150px) {
+    grid-template-columns: 14fr 7fr;
+  }
+  @media (min-width: 1400px) {
+    grid-template-columns: 13fr 7fr;
+  }
 `
 
-const AdditionalFooterList = styled.div`
-  margin-top: 2.2rem;
+const Column1 = styled(Column)``
+
+const Column2 = styled(Column)``
+
+const Column3 = styled(Column)`
+  grid-column: 3;
 `
 
-const FooterLink = ({ href, children }) => (
-  <FooterListItem>
+const Section = styled.div`
+  margin: 2rem 0;
+`
+
+const Link = ({ href, children }) => (
+  <ListItem>
     <FooterAnchor href={href} target="_blank">
       {children}
     </FooterAnchor>
-  </FooterListItem>
+  </ListItem>
 )
 
 const Footer = () => (
   <Container>
     <Content>
-      <FooterColumn1>
-        <FooterListHeader>Currently</FooterListHeader>
-        <FooterList>
-          <FooterLink href="https://getcruise.com">
-            Freelance Product Designer, Cruise Automation
-          </FooterLink>
-        </FooterList>
-        <AdditionalFooterList>
-          <FooterListHeader>Previously</FooterListHeader>
-          <FooterList>
-            <FooterLink href="https://bugsnag.com">
-              Head of Design, Bugsnag
-            </FooterLink>
-          </FooterList>
-        </AdditionalFooterList>
-      </FooterColumn1>
-      <FooterColumn2>
-        <FooterListHeader>Elsewhere</FooterListHeader>
-        <FooterList>
-          <FooterLink href="https://medium.com/@maxluster">Medium</FooterLink>
-          <FooterLink href="https://github.com.com/maxluster">
-            Github
-          </FooterLink>
-          <FooterLink href="https://beta.observable.com/maxluster">
-            Observable
-          </FooterLink>
-          <FooterLink href="https://twitter.com/maxluster">Twitter</FooterLink>
-          <FooterLink href="https://soundcloud.com/maaaaaaaaaaaaax">
-            Soundcloud
-          </FooterLink>
-          <FooterLink href="https://instagram.com/maxluster">
-            Instagram
-          </FooterLink>
-        </FooterList>
-      </FooterColumn2>
-      <FooterColumn3>
-        <FooterListHeader>Writing</FooterListHeader>
-        <FooterList>
-          <FooterLink href="https://medium.com/@maxluster">
-            Multivariate data visualization and the limits of human perception
-          </FooterLink>
-          <FooterLink href="https://blog.bugsnag.com/chromatic-sass/">
-            Advanced Sass color utilities with chromatic-sass
-          </FooterLink>
-          <FooterLink href="https://blog.bugsnag.com/sass-color-palettes/">
-            Managing color palettes with color scales and Sass maps
-          </FooterLink>
-          <FooterLink href="https://blog.bugsnag.com/responsive-typography-with-chained-media-queries/">
-            Responsive typography (3 of 3): Chained media queries
-          </FooterLink>
-          <FooterLink href="https://blog.bugsnag.com/responsive-typography-with-modular-scale">
-            Responsive typography (2 of 3): Proportional type
-          </FooterLink>
-          <FooterLink href="https://blog.bugsnag.com/responsive-typography-with-rems">
-            Responsive typography (1 of 3): Scalable type
-          </FooterLink>
-          <FooterLink href="https://blog.bugsnag.com/branding-early-stage-startups/">
-            Branding for early stage startups
-          </FooterLink>
-        </FooterList>
-        <AdditionalFooterList>
-          <FooterListHeader>Open source</FooterListHeader>
-          <FooterList>
-            <FooterLink href="https://github.com/bugsnag/chromatic-sass">
+      <LeftColumns>
+        <Column1>
+          <Section>
+            <Header>Currently</Header>
+            <List>
+              <Link href="https://getcruise.com">
+                Freelance Product Designer, Cruise Automation
+              </Link>
+            </List>
+          </Section>
+          <Section>
+            <Header>Previously</Header>
+            <List>
+              <Link href="https://bugsnag.com">VP of Design, Bugsnag</Link>
+            </List>
+          </Section>
+        </Column1>
+        <Column2>
+          <Section>
+            <Header>Elsewhere</Header>
+            <List>
+              <Link href="https://medium.com/@maxluster">Medium</Link>
+              <Link href="https://github.com/maxluster">Github</Link>
+              <Link href="https://beta.observablehq.com/@maxluster">
+                Observable
+              </Link>
+              <Link href="https://twitter.com/maxluster">Twitter</Link>
+              <Link href="https://soundcloud.com/maaaaaaaaaaax">
+                Soundcloud
+              </Link>
+              <Link href="https://instagram.com/maxluster">Instagram</Link>
+            </List>
+          </Section>
+        </Column2>
+      </LeftColumns>
+      <Column3>
+        <Section>
+          <Header>Writing</Header>
+          <List>
+            <Link href="https://medium.com/@maxluster">
+              Multivariate data visualization and the limits of human perception
+            </Link>
+            <Link href="https://blog.bugsnag.com/chromatic-sass/">
+              Advanced Sass color utilities with chromatic-sass
+            </Link>
+            <Link href="https://blog.bugsnag.com/sass-color-palettes/">
+              Managing color palettes with color scales and Sass maps
+            </Link>
+            <Link href="https://blog.bugsnag.com/responsive-typography-with-chained-media-queries/">
+              Responsive typography (3 of 3): Chained media queries
+            </Link>
+            <Link href="https://blog.bugsnag.com/responsive-typography-with-modular-scale">
+              Responsive typography (2 of 3): Proportional type
+            </Link>
+            <Link href="https://blog.bugsnag.com/responsive-typography-with-rems">
+              Responsive typography (1 of 3): Scalable type
+            </Link>
+            <Link href="https://blog.bugsnag.com/branding-early-stage-startups/">
+              Branding for early stage startups
+            </Link>
+          </List>
+        </Section>
+        <Section>
+          <Header>Open source</Header>
+          <List>
+            <Link href="https://github.com/bugsnag/chromatic-sass">
               Chromatic Sass
-            </FooterLink>
-          </FooterList>
-        </AdditionalFooterList>
-      </FooterColumn3>
+            </Link>
+          </List>
+        </Section>
+      </Column3>
     </Content>
   </Container>
 )

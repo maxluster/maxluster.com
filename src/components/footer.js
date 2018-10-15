@@ -121,7 +121,9 @@ const Footer = () => (
         <Column2>
           <Section>
             <Header>Elsewhere</Header>
+
             <List>
+              <Link href="https://medium.com/@maxluster">Medium</Link>
               <Link href="https://github.com/maxluster">Github</Link>
               <Link href="https://beta.observablehq.com/@maxluster">
                 Observable
@@ -139,6 +141,9 @@ const Footer = () => (
         <Section>
           <Header>Writing</Header>
           <List>
+            <Link href="https://medium.com/@maxluster/multivariate-data-visualization-and-the-limits-of-human-perception-60ad47b4f59f">
+              Multivariate data visualization and the limits of human perception
+            </Link>
             <Link href="https://blog.bugsnag.com/chromatic-sass/">
               Advanced Sass color utilities with chromatic-sass
             </Link>

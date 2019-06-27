@@ -115,9 +115,6 @@ const Footer = () => (
           <Section>
             <Header>Previously</Header>
             <List>
-              <Link href="https://getcruise.com">
-                Product Designer, Cruise (Contract)
-              </Link>
               <Link href="https://bugsnag.com">Head of Design, Bugsnag</Link>
             </List>
           </Section>
@@ -126,12 +123,12 @@ const Footer = () => (
           <Section>
             <Header>Elsewhere</Header>
             <List>
-              <Link href="https://medium.com/@maxluster">Medium</Link>
-              <Link href="https://github.com/maxluster">Github</Link>
-              <Link href="https://beta.observablehq.com/@maxluster">
-                Observable
+              <Link href="https://www.linkedin.com/in/maxluster/">
+                LinkedIn
               </Link>
               <Link href="https://twitter.com/maxluster">Twitter</Link>
+              <Link href="https://medium.com/@maxluster">Medium</Link>
+              <Link href="https://github.com/maxluster">Github</Link>
               <Link href="https://soundcloud.com/maaaaaaaaaaax">
                 Soundcloud
               </Link>

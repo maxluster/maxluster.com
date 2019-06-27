@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import palette from '../styles/palette.js'
+import React from 'react';
+import styled from 'styled-components';
+
+import palette from '../styles/palette.js';
 
 // Layout
 
@@ -106,14 +107,17 @@ const Footer = () => (
           <Section>
             <Header>Currently</Header>
             <List>
-              <Link href="https://getcruise.com">
-                Contract Product Designer, Cruise Automation
+              <Link href="mailto:max@maxluster.com">
+                Exploring new opportunities
               </Link>
             </List>
           </Section>
           <Section>
             <Header>Previously</Header>
             <List>
+              <Link href="https://getcruise.com">
+                Product Designer, Cruise (Contract)
+              </Link>
               <Link href="https://bugsnag.com">Head of Design, Bugsnag</Link>
             </List>
           </Section>
@@ -121,7 +125,6 @@ const Footer = () => (
         <Column2>
           <Section>
             <Header>Elsewhere</Header>
-
             <List>
               <Link href="https://medium.com/@maxluster">Medium</Link>
               <Link href="https://github.com/maxluster">Github</Link>
